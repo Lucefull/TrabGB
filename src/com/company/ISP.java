@@ -13,15 +13,38 @@ public class ISP {
 
     public void sendRecive(){
         for (int s =0 ;s<servidores.length;s++){
+            if(servidores[s]!=null){
             for (int c =0;c<servidores[s].caixasPostais.length;c++){
-                for(int i =0;i<servidores[s].caixasPostais[c].caixaDeSaida.length;i++){
-                    String[] dest =servidores[s].caixasPostais[c].caixaDeSaida[i].destinatario;
-                    for(int d =0 ;d<dest.length;d++){
-                        
+                if(servidores[s].caixasPostais[c]!=null){
+                for(int i =0;i<servidores[s].caixasPostais[c].caixaDeSaida.length;i++) {
+                    if (servidores[s].caixasPostais[c].caixaDeSaida[i] != null) {
+                        String[] dest = servidores[s].caixasPostais[c].caixaDeSaida[i].destinatario;
+                        if (dest != null) {
+                            for (int d = 0; d < dest.length; d++) {
+                                entregar(servidores[s].caixasPostais[c].caixaDeSaida[i], dest[d]);
+                            }
+                        }
                     }
                 }
+                }
             }
+            }
+        }
+    }
 
+    public void entregar(Email e,String dest){
+        String[] d = dest.split("@");
+        String nome = d[0];
+        String serv = d[1];
+        for (int s =0 ;s<servidores.length;s++){
+            if(servidores[s].nomeServidor.equalsIgnoreCase(serv)){
+                for (int i = 0;i<servidores[s].caixasPostais.length;i++){
+                    if (servidores[s].caixasPostais[i].nomeDono.equalsIgnoreCase(nome)){
+                        servidores[s].caixasPostais[i].receive(e);
+                    }
+
+                }
+            }
         }
     }
 

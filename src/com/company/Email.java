@@ -1,20 +1,20 @@
 package com.company;
 
 public class Email {
-    String[] remetente = new String[10];
-    String destinatario;
+    String remetente;
+    String[] destinatario;
     String corpo;
     String assunto;
 
-    public String[] getRemetente() {
+    public String getRemetente() {
         return remetente;
     }
 
-    public String getDestinatario() {
+    public String[] getDestinatario() {
         return destinatario;
     }
 
-    public void setDestinatario(String destinatario) {
+    public void setDestinatario(String[] destinatario) {
         this.destinatario = destinatario;
     }
 
@@ -34,14 +34,14 @@ public class Email {
         this.assunto = assunto;
     }
 
-    public void setRemetente(String[] remetente) {
+    public void setRemetente(String remetente) {
         this.remetente = remetente;
     }
 
     public Email(){
     }
 
-    public Email(String destinatario,String assunto,String corpo){
+    public Email(String[] destinatario,String assunto,String corpo){
 
     }
     public Email(String remetente,String[] destinatario,String assunto,String corpo){

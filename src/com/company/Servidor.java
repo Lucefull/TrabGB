@@ -42,9 +42,9 @@ public class Servidor {
         return false;
     }
 
-    //public CaixaPostal getCpx(String nome){
-      //  return CaixaPostal;
-    //}
+    public CaixaPostal getCx(String nome){
+        return caixasPostais[0];
+    }
 
     public String showCxsPostais(){
         return null;

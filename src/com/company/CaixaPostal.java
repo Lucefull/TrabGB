@@ -41,25 +41,14 @@ public class CaixaPostal {
         return nomeDono;
     }
 
-    public void setNomeDono(String nomeDono) {
-        this.nomeDono = nomeDono;
-    }
-
     public Email[] getCaixaDeSaida() {
         return caixaDeSaida;
-    }
-
-    public void setCaixaDeSaida(Email[] caixaDeSaida) {
-        this.caixaDeSaida = caixaDeSaida;
     }
 
     public Email[] getCaixaDeEntrada() {
         return caixaDeEntrada;
     }
 
-    public void setCaixaDeEntrada(Email[] caixaDeEntrada) {
-        this.caixaDeEntrada = caixaDeEntrada;
-    }
     //endregion
 
     public boolean send(Email email){
@@ -78,14 +67,14 @@ public class CaixaPostal {
         }
     }
 
-    @Override
-    public String toString() {
-        return "CaixaPostal{" +
-                "nomeDono='" + nomeDono + '\'' +
-                ", caixaDeSaida=" + Arrays.toString(caixaDeSaida) +
-                ", caixaDeEntrada=" + Arrays.toString(caixaDeEntrada) +
-                ", totEmailEntrada=" + totEmailEntrada +
-                ", totEmailSaida=" + totEmailSaida +
-                '}';
+    public String showInbox(){
+        return null;
+    }
+
+    public String showOutBox(){
+        return null;
+    }
+    public void clearInbox(){
+
     }
 }

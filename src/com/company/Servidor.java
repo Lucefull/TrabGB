@@ -38,4 +38,15 @@ public class Servidor {
 
     //endregion
 
+    public boolean addCpx(CaixaPostal caixaPostal){
+        return false;
+    }
+
+    //public CaixaPostal getCpx(String nome){
+      //  return CaixaPostal;
+    //}
+
+    public String showCxsPostais(){
+        return null;
+    }
 }

@@ -15,7 +15,18 @@ public class Main {
         CaixaPostal cpEduardo = new CaixaPostal("eduardo",10,10);
         CaixaPostal cpJonas = new CaixaPostal("jonas",10,10);
 
-        //isp.getServidore("kmail.com").addCx("cpCarlos");
+        isp.getServidor("kmail.com").addCpx(cpCarlos);
+        isp.getServidor("kmail.com").addCpx(cpEduardo);
+        isp.getServidor("kmail.com").addCpx(cpJonas);
+
+        isp.getServidor("oi.com").addCpx(new CaixaPostal("luis",20,20));
+        isp.getServidor("oi.com").addCpx(new CaixaPostal("marcio",10,10));
+
+        Email em = new Email("carlos",
+                new String[]{"Eduardo@kmail.com","luis@oi.com"},
+                "Preciso de ferias",
+                "Agora!");
+        cpCarlos.send(em);
         //endregion
 
 

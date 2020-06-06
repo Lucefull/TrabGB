@@ -62,6 +62,21 @@ public class CaixaPostal {
     }
     //endregion
 
+    public boolean send(Email email){
+        if(true){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public boolean receive(Email email){
+        if(true){
+            return true;
+        }else {
+            return false;
+        }
+    }
 
     @Override
     public String toString() {

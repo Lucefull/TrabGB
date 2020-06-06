@@ -44,7 +44,7 @@ public class Email {
     public Email(String destinatario,String assunto,String corpo){
 
     }
-    public Email(String remetente,String destinatario,String assunto,String corpo){
+    public Email(String remetente,String[] destinatario,String assunto,String corpo){
 
     }
 

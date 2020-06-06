@@ -4,12 +4,18 @@ import java.util.Arrays;
 
 public class CaixaPostal {
     String nomeDono;
-    Email[] caixaDeSaida = new Email[20];
-    Email[] caixaDeEntrada = new Email[20];
+    Email[] caixaDeSaida ;
+    Email[] caixaDeEntrada;
     int totEmailEntrada;
     int totEmailSaida;
 
     public CaixaPostal() {
+    }
+
+    public CaixaPostal(String nomeDono, int caixaDeSaida, int caixaDeEntrada) {
+        this.nomeDono = nomeDono;
+        this.caixaDeSaida = new Email[caixaDeSaida];
+        this.caixaDeEntrada = new Email[caixaDeEntrada];
     }
 
     //region Getter and Setter

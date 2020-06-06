@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86d24960-993d-4dc8-b6a1-a04be3b30aa5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TrabGB.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TrabGB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TrabGB.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabGB/com/company/CaixaPostal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabGB/com/company/CaixaPostal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabGB/com/company/ISP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabGB/com/company/ISP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabGB/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabGB/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabGB/com/company/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabGB/com/company/Servidor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/CaixaPostal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CaixaPostal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/EmailComAnexo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/EmailComAnexo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/ISP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ISP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Servidor.java" afterDir="false" />
@@ -37,6 +25,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -79,13 +68,37 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591459011754">
+    <state x="734" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591459125214">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="734" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591459011754" />
+    <state x="734" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591459125214" />
+    <state x="1085" y="203" key="#com.intellij.ide.util.MemberChooser" timestamp="1591461229401">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1085" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1591461229401" />
     <state x="1009" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591458750893">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1009" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591458750893" />
+    <state width="2517" height="282" key="GridCell.Tab.0.bottom" timestamp="1591460154429">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2517" height="282" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591460154429" />
+    <state width="2517" height="282" key="GridCell.Tab.0.center" timestamp="1591460154429">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2517" height="282" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591460154429" />
+    <state width="2517" height="282" key="GridCell.Tab.0.left" timestamp="1591460154429">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2517" height="282" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591460154429" />
+    <state width="2517" height="282" key="GridCell.Tab.0.right" timestamp="1591460154429">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2517" height="282" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591460154429" />
+    <state x="936" y="240" key="run.anything.popup" timestamp="1591459023663">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="936" y="240" key="run.anything.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1591459023663" />
   </component>
 </project>

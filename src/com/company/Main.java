@@ -4,6 +4,21 @@ public class Main {
 
     public static void main(String[] args) {
         Teclado scan = new Teclado();
+
+        //region TESTE
+        ISP isp = new ISP(10);//suporta ate 10 servers
+        isp.inserirServidor(new Servidor("kmail.com",20));//suporta até 20 caixas postais
+        isp.inserirServidor(new Servidor("tierra.com.br",50));
+        isp.inserirServidor(new Servidor("oi.com",15));
+
+        CaixaPostal cpCarlos = new CaixaPostal("carlos",10,10);
+        CaixaPostal cpEduardo = new CaixaPostal("eduardo",10,10);
+        CaixaPostal cpJonas = new CaixaPostal("jonas",10,10);
+
+        //isp.getServidore("kmail.com").addCx("cpCarlos");
+        //endregion
+
+
         int op = 1;
         while (op >0){
             System.out.println("###################################" +

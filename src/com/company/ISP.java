@@ -21,7 +21,8 @@ public class ISP {
                         String[] dest = servidores[s].caixasPostais[c].caixaDeSaida[i].destinatario;
                         if (dest != null) {
                             for (int d = 0; d < dest.length; d++) {
-                                entregar(servidores[s].caixasPostais[c].caixaDeSaida[i], dest[d]);
+                                entregar(servidores[s].caixasPostais[c].caixaDeSaida[i],
+                                        dest[d]);
                             }
                         }
                     }

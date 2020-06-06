@@ -31,7 +31,7 @@ public class Main {
                 "Alo!",
                 "Este é o anexo!"));
         isp.sendRecive();
-
+        String cp = cpCarlos.showInbox();
         System.out.println(cpCarlos.showInbox());
         System.out.println(isp.showAll());
 
@@ -57,7 +57,7 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("3");
-                    System.out.println(isp.showAll());
+
                     break;
                 case 4:
 

@@ -52,29 +52,47 @@ public class CaixaPostal {
     //endregion
 
     public boolean send(Email email){
-        if(true){
+        try{
+            caixaDeSaida[totEmailSaida] = email;
+            totEmailSaida++;
             return true;
-        }else {
+        }catch (Exception e) {
             return false;
         }
     }
 
     public boolean receive(Email email){
-        if(true){
+        try{
+            caixaDeEntrada[totEmailEntrada] = email;
+            totEmailEntrada++;
             return true;
-        }else {
+        }catch (Exception e) {
             return false;
         }
     }
 
     public String showInbox(){
-        return null;
+        String saida = null;
+        for (int i=0;i<caixaDeEntrada.length;i++){
+            if(caixaDeEntrada[i] !=null){
+                saida = caixaDeEntrada[i].toString();
+            }
+        }
+        return saida;
     }
 
     public String showOutBox(){
-        return null;
+        String saida = null;
+        for (int i=0;i<caixaDeSaida.length;i++){
+            if(caixaDeSaida[i] !=null){
+                saida = caixaDeSaida[i].toString();
+            }
+        }
+        return saida;
     }
     public void clearInbox(){
-
+        for(int i =0;i<caixaDeEntrada.length;i++){
+            caixaDeEntrada[i] = null;
+        }
     }
 }

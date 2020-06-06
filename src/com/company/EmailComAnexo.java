@@ -20,4 +20,9 @@ public class EmailComAnexo extends Email{
         this.anexo = anexo;
     }
 
+    @Override
+    public String toString() {
+        //(remetente/assunto/corpo (e anexo, se for o caso)
+        return remetente+"|"+assunto+"|"+corpo+"|"+anexo;
+    }
 }

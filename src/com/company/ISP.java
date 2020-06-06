@@ -24,7 +24,13 @@ public class ISP {
     }
 
     public String showAll(){
-        return null;
+        String saida = null;
+        for (int i =0;i<servidores.length;i++){
+            if(servidores[i]!=null){
+                saida = "\n"+servidores[i].nomeServidor;
+            }
+        }
+        return saida;
     }
 
     public boolean inserirServidor(Servidor server){

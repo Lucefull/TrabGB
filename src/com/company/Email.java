@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Email {
     String remetente;
     String[] destinatario;
@@ -48,5 +50,9 @@ public class Email {
 
     }
 
-
+    @Override
+    public String toString() {
+        //(remetente/assunto/corpo (e anexo, se for o caso)
+        return remetente+"|"+assunto+"|"+corpo;
+    }
 }

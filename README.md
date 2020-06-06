@@ -1,5 +1,5 @@
 # TrabGB
 /*
 Trabalho Grau B
-Luan Stefferens & Loenardo Valim
+Luan Steffens & Loenardo Valim
 */

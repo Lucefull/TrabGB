@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JavaBase.iml" filepath="$PROJECT_DIR$/JavaBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrabGB.iml" filepath="$PROJECT_DIR$/TrabGB.iml" />
     </modules>
   </component>
 </project>

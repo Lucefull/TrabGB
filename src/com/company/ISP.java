@@ -12,7 +12,17 @@ public class ISP {
 
 
     public void sendRecive(){
+        for (int s =0 ;s<servidores.length;s++){
+            for (int c =0;c<servidores[s].caixasPostais.length;c++){
+                for(int i =0;i<servidores[s].caixasPostais[c].caixaDeSaida.length;i++){
+                    String[] dest =servidores[s].caixasPostais[c].caixaDeSaida[i].destinatario;
+                    for(int d =0 ;d<dest.length;d++){
+                        
+                    }
+                }
+            }
 
+        }
     }
 
     public Servidor[] getServidores() {
@@ -24,10 +34,10 @@ public class ISP {
     }
 
     public String showAll(){
-        String saida = null;
+        String saida= new String();
         for (int i =0;i<servidores.length;i++){
             if(servidores[i]!=null){
-                saida = "\n"+servidores[i].nomeServidor;
+                saida = saida+servidores[i].nomeServidor+"\n";
             }
         }
         return saida;

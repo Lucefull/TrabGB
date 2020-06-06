@@ -32,8 +32,8 @@ public class Main {
                 "Este é o anexo!"));
         isp.sendRecive();
 
-        //System.out.println(cpCarlos.showInbox());
-        //System.out.println(isp.showAll());
+        System.out.println(cpCarlos.showInbox());
+        System.out.println(isp.showAll());
 
         System.out.println("\n\nConcluido com sucesso!");
 

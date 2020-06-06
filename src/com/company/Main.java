@@ -30,8 +30,12 @@ public class Main {
                 "Projeto",
                 "Alo!",
                 "Este é o anexo!"));
+
         isp.sendRecive();
-        String cp = cpCarlos.showInbox();
+        System.out.println(cpCarlos.showInbox());
+        System.out.println(cpEduardo.showInbox());
+        System.out.println(cpJonas.showInbox());
+
         System.out.println(cpCarlos.showInbox());
         System.out.println(isp.showAll());
 

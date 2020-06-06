@@ -44,10 +44,15 @@ public class Email {
     }
 
     public Email(String[] destinatario,String assunto,String corpo){
-
+        this.destinatario = destinatario;
+        this.assunto = assunto;
+        this.corpo = corpo;
     }
     public Email(String remetente,String[] destinatario,String assunto,String corpo){
-
+        this.destinatario = destinatario;
+        this.assunto = assunto;
+        this.corpo = corpo;
+        this.remetente = remetente;
     }
 
     @Override

@@ -72,7 +72,7 @@ public class CaixaPostal {
     }
 
     public String showInbox(){
-        String saida = null;
+        String saida = new String();
         for (int i=0;i<caixaDeEntrada.length;i++){
             if(caixaDeEntrada[i] !=null){
                 saida = caixaDeEntrada[i].toString();
@@ -82,7 +82,7 @@ public class CaixaPostal {
     }
 
     public String showOutBox(){
-        String saida = null;
+        String saida = new String();
         for (int i=0;i<caixaDeSaida.length;i++){
             if(caixaDeSaida[i] !=null){
                 saida = caixaDeSaida[i].toString();

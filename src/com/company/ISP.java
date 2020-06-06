@@ -18,13 +18,13 @@ public class ISP {
                 if(servidores[s].caixasPostais[c]!=null){
                 for(int i =0;i<servidores[s].caixasPostais[c].caixaDeSaida.length;i++) {
                     if (servidores[s].caixasPostais[c].caixaDeSaida[i] != null) {
+
+                        Email e = servidores[s].caixasPostais[c].caixaDeSaida[i];
                         String[] dest = servidores[s].caixasPostais[c].caixaDeSaida[i].destinatario;
-                        if (dest != null) {
-                            for (int d = 0; d < dest.length; d++) {
-                                entregar(servidores[s].caixasPostais[c].caixaDeSaida[i],
-                                        dest[d]);
-                            }
+                        for(int d =0;d<dest.length;d++){
+                            buscarDestinatario(dest[d],servidores[s].caixasPostais[c].caixaDeSaida[i]);
                         }
+
                     }
                 }
                 }
@@ -33,20 +33,30 @@ public class ISP {
         }
     }
 
-    public void entregar(Email e,String dest){
+    public void buscarDestinatario(String dest,Email e){
         String[] d = dest.split("@");
         String nome = d[0];
-        String serv = d[1];
-        for (int s =0 ;s<servidores.length;s++){
-            if(servidores[s].nomeServidor.equalsIgnoreCase(serv)){
-                for (int i = 0;i<servidores[s].caixasPostais.length;i++){
-                    if (servidores[s].caixasPostais[i].nomeDono.equalsIgnoreCase(nome)){
-                        servidores[s].caixasPostais[i].receive(e);
+        String ser = d[1];
+        boolean ent = false;
+        for(int s = 0; s<servidores.length;s++){
+            if(servidores[s]!=null){
+                if(servidores[s].nomeServidor.equalsIgnoreCase(ser)){
+                    for (int c =0 ;c<servidores[s].caixasPostais.length;c++){
+                        if(servidores[s].caixasPostais[c] != null){
+                            if(servidores[s].caixasPostais[c].nomeDono.equalsIgnoreCase(nome)){
+                                servidores[s].caixasPostais[c].receive(e);
+                                ent = true;
+                            }
+                        }
                     }
-
                 }
+
             }
         }
+        if(!ent){
+            servidores[0].caixasPostais[0].send(e);
+        }
+
     }
 
     public Servidor[] getServidores() {

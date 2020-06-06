@@ -3,7 +3,7 @@ package com.company;
 public class Servidor {
     String nomeServidor;
     CaixaPostal[] caixasPostais;
-    int totCaixasPostais;
+    int totCaixasPostais =0;
 
     public Servidor(String nomeServidor, int caixasPostais) {
         this.nomeServidor = nomeServidor;
@@ -39,7 +39,14 @@ public class Servidor {
     //endregion
 
     public boolean addCpx(CaixaPostal caixaPostal){
-        return false;
+        try{
+            caixasPostais[totCaixasPostais] = caixaPostal;
+            totCaixasPostais++;
+            return true;
+        }catch (Exception e) {
+            return false;
+        }
+
     }
 
     public CaixaPostal getCx(String nome){

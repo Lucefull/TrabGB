@@ -1,5 +1,5 @@
 # TrabGB
-/*
-Trabalho Grau B
+
+Trabalho Grau B 
 Luan Steffens & Leonardo Valim
-*/
+

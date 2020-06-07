@@ -50,10 +50,20 @@ public class Servidor {
     }
 
     public CaixaPostal getCx(String nome){
-        return caixasPostais[0];
+        CaixaPostal c = null;
+        for(int i =0;i<caixasPostais.length;i++){
+            if(caixasPostais[i].nomeDono.equalsIgnoreCase(nome)){
+
+                c = caixasPostais[i];
+            }
+        }
+        return c;
     }
 
     public String showCxsPostais(){
-        return null;
+        String resp = new String();
+
+
+        return resp;
     }
 }

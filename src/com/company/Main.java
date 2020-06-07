@@ -4,7 +4,15 @@ public class Main {
 
     public static void main(String[] args) {
         Teclado scan = new Teclado();
+
+
+
         ISP isp = new ISP(10);//suporta ate 10 servers
+
+        isp.inserirServidor(new Servidor("sys",10));
+        isp.getServidor("sys").addCpx(new CaixaPostal("Postman",10,10));
+
+
         isp.inserirServidor(new Servidor("kmail.com",20));//suporta até 20 caixas postais
         isp.inserirServidor(new Servidor("tierra.com.br",50));
         isp.inserirServidor(new Servidor("oi.com",15));

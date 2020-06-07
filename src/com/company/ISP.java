@@ -34,40 +34,44 @@ public class ISP {
     }
 
     public void buscarDestinatario(String dest,Email e){
-        String[] d = dest.split("@");
-        String nome = d[0];
-        String ser = d[1];
-        boolean ent = false;
-        try {
-            for (int s = 0; s < servidores.length; s++) {
-                if (servidores[s] != null) {
-                    if (servidores[s].nomeServidor.equalsIgnoreCase(ser)) {
-                        for (int c = 0; c < servidores[s].caixasPostais.length; c++) {
-                            if (servidores[s].caixasPostais[c] != null) {
-                                if (servidores[s].caixasPostais[c].nomeDono.equalsIgnoreCase(nome)) {
-                                    servidores[s].caixasPostais[c].receive(e);
-                                    ent = true;
+        String[] destinatatios = dest.split(",");
+        for(int ds =0;ds<destinatatios.length;ds++){
+            String[] d = dest.split("@");
+            String nome = d[0];
+            String ser = d[1];
+            boolean ent = false;
+            try {
+                for (int s = 0; s < servidores.length; s++) {
+                    if (servidores[s] != null) {
+                        if (servidores[s].nomeServidor.equalsIgnoreCase(ser)) {
+                            for (int c = 0; c < servidores[s].caixasPostais.length; c++) {
+                                if (servidores[s].caixasPostais[c] != null) {
+                                    if (servidores[s].caixasPostais[c].nomeDono.equalsIgnoreCase(nome)) {
+                                        servidores[s].caixasPostais[c].receive(e);
+                                        ent = true;
+                                    }
                                 }
                             }
                         }
-                    }
 
+                    }
                 }
-            }
-            if (!ent) {
+                if (!ent) {
+                    Email erro = new Email("Postman",
+                            new String[]{e.remetente},
+                            "Relatorio de erros",
+                            "Destinatario não encontrado!");
+                    servidores[0].caixasPostais[0].send(erro);
+                }
+            }catch (Exception ex){
                 Email erro = new Email("Postman",
                         new String[]{e.remetente},
                         "Relatorio de erros",
-                        "Destinatario não encontrado!");
+                        ex.getMessage());
                 servidores[0].caixasPostais[0].send(erro);
             }
-        }catch (Exception ex){
-            Email erro = new Email("Postman",
-                    new String[]{e.remetente},
-                    "Relatorio de erros",
-                    ex.getMessage());
-            servidores[0].caixasPostais[0].send(erro);
         }
+
     }
 
     public Servidor[] getServidores() {

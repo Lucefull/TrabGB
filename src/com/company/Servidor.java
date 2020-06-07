@@ -52,9 +52,12 @@ public class Servidor {
     public CaixaPostal getCx(String nome){
         CaixaPostal c = null;
         for(int i =0;i<caixasPostais.length;i++){
-            if(caixasPostais[i].nomeDono.equalsIgnoreCase(nome)){
-                c = caixasPostais[i];
+            if(caixasPostais[i] !=null){
+                if(caixasPostais[i].nomeDono.equalsIgnoreCase(nome)){
+                    c = caixasPostais[i];
+                }
             }
+
         }
         return c;
     }

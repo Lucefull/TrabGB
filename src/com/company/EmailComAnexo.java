@@ -7,8 +7,8 @@ public class EmailComAnexo extends Email{
         this.anexo = anexo;
     }
 
-    public EmailComAnexo(String[] destinatario, String assunto, String corpo, String anexo) {
-        super(destinatario, assunto, corpo);
+    public EmailComAnexo(String remetente,String[] destinatario, String assunto, String corpo, String anexo) {
+        super(remetente,destinatario, assunto, corpo);
         this.anexo = anexo;
     }
 

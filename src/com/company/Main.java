@@ -52,6 +52,7 @@ public class Main {
                     "         \n### 2 ## Novo servidor          ###" +
                     "         \n### 3 ## Remover servidor       ###" +
                     "         \n### 4 ## Entrar Email           ###" +
+                    "         \n### 5 ## Novo Email             ###" +
                     "         \n### 0 ## Sair                   ###" +
                     "         \n###################################");
             op =scan.leInt("Escolha uma opção: ");
@@ -113,12 +114,12 @@ public class Main {
                                 }
                                 isp.getServidor(serv).getCx(email).send(e);
                                 break;
-
                         }
                     }
-
-
-
+                    break;
+                case 5:
+                    String[] e = scan.leString("Dgigite o email!").split("@");
+                    isp.getServidor(e[1]).addCpx(new CaixaPostal(e[0],10,10));
                     break;
                 case 0:
                     System.out.println("Volte sempre!");

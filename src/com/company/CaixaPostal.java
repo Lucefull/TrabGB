@@ -73,7 +73,7 @@ public class CaixaPostal {
         String saida = new String();
         for (int i=0;i<caixaDeEntrada.length;i++){
             if(caixaDeEntrada[i] !=null){
-                saida = caixaDeEntrada[i].toString();
+                saida = saida + caixaDeEntrada[i].toString()+"\n";
             }
         }
         return saida;
@@ -87,9 +87,9 @@ public class CaixaPostal {
                 for (int c =0;c<caixaDeSaida[i].destinatario.length;c++){
                     nom = nom+caixaDeSaida[i].destinatario[c]+",";
                 }
-                saida = nom+" | "+
+                saida =saida+ caixaDeSaida[i].destinatario+" | "+
                 caixaDeSaida[i].assunto+" | "+
-                caixaDeSaida[i].corpo+" | ";
+                caixaDeSaida[i].corpo+" | \n";
             }
         }
         return saida;

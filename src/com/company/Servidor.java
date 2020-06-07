@@ -53,7 +53,6 @@ public class Servidor {
         CaixaPostal c = null;
         for(int i =0;i<caixasPostais.length;i++){
             if(caixasPostais[i].nomeDono.equalsIgnoreCase(nome)){
-
                 c = caixasPostais[i];
             }
         }
@@ -62,6 +61,23 @@ public class Servidor {
 
     public String showCxsPostais(){
         String resp = new String();
+        for(int i =0;i<caixasPostais.length;i++){
+            if(caixasPostais[i]!=null){
+                resp = caixasPostais[i].nomeDono+"\n";
+                resp = resp+"Caixa de Entrada\n";
+                for(int e = 0;e<caixasPostais[i].caixaDeEntrada.length;e++){
+                    if(caixasPostais[i].caixaDeEntrada[e]!=null){
+                        resp = resp+caixasPostais[i].caixaDeEntrada[e].toString()+"\n";
+                    }
+                }
+                for(int s = 0;s<caixasPostais[i].caixaDeEntrada.length;s++){
+                    if(caixasPostais[i].caixaDeSaida[s]!=null){
+                        resp = resp+caixasPostais[i].caixaDeSaida[s].toString()+"\n";
+                    }
+                }
+            }
+
+        }
 
 
         return resp;

@@ -103,7 +103,16 @@ public class ISP {
     }
 
     public boolean removerServidor(String server){
-        return false;
+        boolean saida = false;
+        for(int i =0;i<servidores.length;i++){
+            if(servidores[i]!=null){
+                if(servidores[i].nomeServidor.equalsIgnoreCase(server)){
+                    servidores[i] = null;
+                    saida = true;
+                }
+            }
+        }
+        return saida;
     }
 
     public Servidor getServidor(String nomeServidor){

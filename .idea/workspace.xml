@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="86d24960-993d-4dc8-b6a1-a04be3b30aa5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/CaixaPostal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CaixaPostal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/ISP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ISP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Servidor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +134,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/CaixaPostal.java</url>
-          <line>55</line>
+          <line>53</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>

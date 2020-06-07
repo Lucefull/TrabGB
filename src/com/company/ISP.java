@@ -33,7 +33,7 @@ public class ISP {
                                     }else {
                                         if(getServidor(serv).getCx(user) == null){
                                             //erro usuario não encontrado
-                                            servidores[0].caixasPostais[0].send(new Email(
+                                            servidores[0].caixasPostais[0].send(new Email(servidores[0].caixasPostais[0].nomeDono,
                                                     new String[]{servidores[s].caixasPostais[c].nomeDono+"@"+servidores[s].nomeServidor},
                                                     "Erro ao enviar",
                                                     "Destinatario: "+user+",não encontrado!"

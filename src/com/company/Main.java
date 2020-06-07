@@ -79,7 +79,6 @@ public class Main {
                     String email = scan.leString("Digite o nome:");
                     int op2=1;
                     while (op2>0){
-                        isp.sendRecive();
                         System.out.println("###################################" +
                                 "         \n### 1 ## Abrir inbox            ###" +
                                 "         \n### 2 ## Abrir outbox           ###" +
@@ -90,6 +89,8 @@ public class Main {
                         switch (op2){
                             case 1:
                                 System.out.println("Inbox");
+                                isp.getServidor(serv).getCx(email).clearInbox();
+                                isp.sendRecive();
                                 System.out.println(isp.getServidor(serv).getCx(email).showInbox());
                                 break;
                             case 2:

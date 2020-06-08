@@ -35,42 +35,69 @@ public class CaixaPostal {
         this.totEmailSaida = totEmailSaida;
     }
 
-
-
     public String getNomeDono() {
         return nomeDono;
-    }
-
-    public void setNomeDono(String nomeDono) {
-        this.nomeDono = nomeDono;
     }
 
     public Email[] getCaixaDeSaida() {
         return caixaDeSaida;
     }
 
-    public void setCaixaDeSaida(Email[] caixaDeSaida) {
-        this.caixaDeSaida = caixaDeSaida;
-    }
-
     public Email[] getCaixaDeEntrada() {
         return caixaDeEntrada;
     }
 
-    public void setCaixaDeEntrada(Email[] caixaDeEntrada) {
-        this.caixaDeEntrada = caixaDeEntrada;
-    }
     //endregion
 
+    public boolean send(Email email){
+        try{
+            caixaDeSaida[totEmailSaida] = email;
+            totEmailSaida++;
+            return true;
+        }catch (Exception e) {
+            return false;
+        }
+    }
 
-    @Override
-    public String toString() {
-        return "CaixaPostal{" +
-                "nomeDono='" + nomeDono + '\'' +
-                ", caixaDeSaida=" + Arrays.toString(caixaDeSaida) +
-                ", caixaDeEntrada=" + Arrays.toString(caixaDeEntrada) +
-                ", totEmailEntrada=" + totEmailEntrada +
-                ", totEmailSaida=" + totEmailSaida +
-                '}';
+    public boolean receive(Email email){
+        try{
+            caixaDeEntrada[totEmailEntrada] = email;
+            totEmailEntrada++;
+            return true;
+        }catch (Exception e) {
+            return false;
+        }
+    }
+
+    public String showInbox(){
+        String saida = new String();
+        for (int i=0;i<caixaDeEntrada.length;i++){
+            if(caixaDeEntrada[i] !=null){
+                saida = saida + caixaDeEntrada[i].toString()+"\n";
+            }
+        }
+        return saida;
+    }
+
+    public String showOutBox(){
+        String saida = new String();
+        for (int i=0;i<caixaDeSaida.length;i++){
+            if(caixaDeSaida[i] !=null){
+                String nom = new String();
+                for (int c =0;c<caixaDeSaida[i].destinatario.length;c++){
+                    nom = nom+caixaDeSaida[i].destinatario[c]+",";
+                }
+                saida =saida+ caixaDeSaida[i].destinatario+" | "+
+                caixaDeSaida[i].assunto+" | "+
+                caixaDeSaida[i].corpo+" | \n";
+            }
+        }
+        return saida;
+    }
+    public void clearInbox(){
+        for(int i =0;i<caixaDeEntrada.length;i++){
+            caixaDeEntrada[i] = null;
+        }
+        totEmailEntrada = 0;
     }
 }

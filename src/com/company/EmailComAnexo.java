@@ -7,6 +7,11 @@ public class EmailComAnexo extends Email{
         this.anexo = anexo;
     }
 
+    public EmailComAnexo(String remetente,String[] destinatario, String assunto, String corpo, String anexo) {
+        super(remetente,destinatario, assunto, corpo);
+        this.anexo = anexo;
+    }
+
     public String getAnexo() {
         return anexo;
     }
@@ -15,4 +20,9 @@ public class EmailComAnexo extends Email{
         this.anexo = anexo;
     }
 
+    @Override
+    public String toString() {
+        //(remetente/assunto/corpo (e anexo, se for o caso)
+        return remetente+"|"+assunto+"|"+corpo+"|"+anexo;
+    }
 }

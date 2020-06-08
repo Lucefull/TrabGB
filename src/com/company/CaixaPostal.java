@@ -98,5 +98,6 @@ public class CaixaPostal {
         for(int i =0;i<caixaDeEntrada.length;i++){
             caixaDeEntrada[i] = null;
         }
+        totEmailEntrada = 0;
     }
 }

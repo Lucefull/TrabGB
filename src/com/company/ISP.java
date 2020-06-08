@@ -39,7 +39,13 @@ public class ISP {
                                                     "Destinatario: "+user+",não encontrado!"
                                             ));
                                         }else {
-                                            getServidor(serv).getCx(user).receive(e);
+                                            if(!getServidor(serv).getCx(user).receive(e)){
+                                                servidores[0].caixasPostais[0].send(new Email(servidores[0].caixasPostais[0].nomeDono,
+                                                        new String[]{servidores[s].caixasPostais[c].nomeDono+"@"+servidores[s].nomeServidor},
+                                                        "Erro ao enviar",
+                                                        "Caixa de entrada do "+dests[d]+" cheia!"
+                                                ));
+                                            }
                                         }
                                     }
                                 }

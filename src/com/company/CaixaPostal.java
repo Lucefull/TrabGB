@@ -89,7 +89,7 @@ public class CaixaPostal {
                 }
                 saida =saida+ nom+" | "+
                 caixaDeSaida[i].assunto+" | "+
-                caixaDeSaida[i].corpo+" | \n";
+                caixaDeSaida[i].corpo+" | ";
             }
         }
         return saida;

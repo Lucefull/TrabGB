@@ -66,16 +66,17 @@ public class Servidor {
         String resp = new String();
         for(int i =0;i<caixasPostais.length;i++){
             if(caixasPostais[i]!=null){
-                resp = caixasPostais[i].nomeDono+"\n";
+                resp = resp+caixasPostais[i].nomeDono+"\n";
                 resp = resp+"Caixa de Entrada\n";
                 for(int e = 0;e<caixasPostais[i].caixaDeEntrada.length;e++){
                     if(caixasPostais[i].caixaDeEntrada[e]!=null){
-                        resp = resp+caixasPostais[i].caixaDeEntrada[e].toString()+"\n";
+                        resp = resp+caixasPostais[i].showInbox()+"\n";
                     }
                 }
+                resp = resp +"Caixa de Saida\n";
                 for(int s = 0;s<caixasPostais[i].caixaDeEntrada.length;s++){
                     if(caixasPostais[i].caixaDeSaida[s]!=null){
-                        resp = resp+caixasPostais[i].caixaDeSaida[s].toString()+"\n";
+                        resp = resp+caixasPostais[i].showOutBox()+"\n";
                     }
                 }
             }

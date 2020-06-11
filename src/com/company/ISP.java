@@ -57,31 +57,6 @@ public class ISP {
         }
     }
 
-    /*
-    * for (int s =0 ;s<servidores.length;s++){
-            if(servidores[s]!=null){
-            for (int c =0;c<servidores[s].caixasPostais.length;c++){
-                if(servidores[s].caixasPostais[c]!=null){
-                for(int i =0;i<servidores[s].caixasPostais[c].caixaDeSaida.length;i++) {
-                    if (servidores[s].caixasPostais[c].caixaDeSaida[i] != null) {
-
-                        Email e = servidores[s].caixasPostais[c].caixaDeSaida[i];
-                        String[] dest = servidores[s].caixasPostais[c].caixaDeSaida[i].destinatario;
-                        for(int d =0;d<dest.length;d++){
-                            buscarDestinatario(dest[d],servidores[s].caixasPostais[c].caixaDeSaida[i]);
-                        }
-
-                    }
-                }
-                }
-            }
-            }
-        }
-    *
-    *
-    *
-    *
-    * */
 
     public Servidor[] getServidores() {
         return servidores;
@@ -138,5 +113,31 @@ public class ISP {
             }
         }
         return servidores[pos];
+    }
+
+    public boolean verificaEmail(String serv, String user){
+        if(getServidor(serv).nomeServidor != "sys"){
+            if(getServidor(serv).getCx(user).nomeDono!=null){
+                return true;
+            }else {
+                return false;
+            }
+        }else {
+            return false;
+        }
+    }
+
+    public void limparInbox(){
+        for (int s =0;s<servidores.length;s++){
+            if(servidores[s]!=null){
+                for (int c =0;c<servidores[s].caixasPostais.length;c++){
+                    if(servidores[s].caixasPostais[c]!=null){
+                        servidores[s].caixasPostais[c].clearInbox();
+                    }
+
+                }
+            }
+
+        }
     }
 }

@@ -48,17 +48,39 @@ public class Main {
         int op = 1;
         while (op >0){
             System.out.println("###################################" +
-                    "         \n### 1 ## Mostrar Servidores     ###" +
+                    "         \n### 1 ## Entrar Servidores      ###" +
                     "         \n### 2 ## Novo servidor          ###" +
                     "         \n### 3 ## Remover servidor       ###" +
                     "         \n### 4 ## Entrar Email           ###" +
                     "         \n### 5 ## Novo Email             ###" +
+                    "         \n### 6 ## Mostrar todos emails   ###" +
                     "         \n### 0 ## Sair                   ###" +
                     "         \n###################################");
             op =scan.leInt("Escolha uma opção: ");
             switch (op) {
                 case 1:
-                    System.out.println(isp.showAll());
+
+                    int op2 =1;
+                    while (op2>0){
+                        System.out.println("###################################" +
+                                "         \n### 1 ## Mostrar Servidores     ###" +
+                                "         \n### 2 ## Emails por servidor    ###" +
+                                "         \n### 0 ## Sair                   ###" +
+                                "         \n###################################");
+                        op2 = scan.leInt("Escolha uma opção:");
+                        switch (op2){
+                            case 1:
+                                System.out.println(isp.showAll());
+                                break;
+                            case 2:
+                                String bus = scan.leString("Digite o nome do servidor: ");
+                                isp.limparInbox();
+                                isp.sendRecive();
+                                System.out.println(isp.getServidor(bus).showCxsPostais());
+                                break;
+                        }
+                    }
+
                     break;
                 case 2:
                      String nome =scan.leString("Digite o nome do servidor: ");
@@ -77,51 +99,60 @@ public class Main {
                     System.out.println("Exemplo: nome@servidor");
                     String serv = scan.leString("Digite o servidor:");
                     String email = scan.leString("Digite o nome:");
-                    int op2=1;
-                    while (op2>0){
-                        System.out.println("###################################" +
-                                "         \n### 1 ## Abrir inbox            ###" +
-                                "         \n### 2 ## Abrir outbox           ###" +
-                                "         \n### 3 ## Novo email             ###" +
-                                "         \n### 0 ## Sair                   ###" +
-                                "         \n###################################");
-                        op2 =scan.leInt("Escolha uma opção: ");
-                        switch (op2){
-                            case 1:
-                                System.out.println("Inbox");
-                                isp.getServidor(serv).getCx(email).clearInbox();
-                                isp.sendRecive();
-                                System.out.println(isp.getServidor(serv).getCx(email).showInbox());
-                                break;
-                            case 2:
-                                System.out.println("Outbox");
-                                System.out.println(isp.getServidor(serv).getCx(email).showOutBox());
-                                break;
-                            case 3:
-                                System.out.println("nome@servidor,nome@servidor");
-                                String[] dest = scan.leString("Digite o nome dos destinatarios:").split(",");
-                                String assunto = scan.leString("Digite o assunto:");
-                                String corpo =scan.leString("Digite o corpo:");
-                                String anexo = scan.leString("Digite o anexo:");
-                                Email e = null;
-                                for (int i =0;i<dest.length;i++){
-                                    if(anexo!=""){
-                                        e = new EmailComAnexo(isp.getServidor(serv).getCx(email).nomeDono,
-                                                dest,assunto,corpo,anexo);
-                                    }else{
-                                        e = new Email(isp.getServidor(serv).getCx(email).nomeDono,
-                                                dest,assunto,corpo);
+                    if(isp.verificaEmail(serv,email)){
+                        op2=1;
+                        while (op2>0){
+                            System.out.println("###################################" +
+                                    "         \n### 1 ## Abrir inbox            ###" +
+                                    "         \n### 2 ## Abrir outbox           ###" +
+                                    "         \n### 3 ## Novo email             ###" +
+                                    "         \n### 0 ## Sair                   ###" +
+                                    "         \n###################################");
+                            op2 =scan.leInt("Escolha uma opção: ");
+                            switch (op2){
+                                case 1:
+                                    System.out.println("Inbox");
+                                    isp.getServidor(serv).getCx(email).clearInbox();
+                                    isp.sendRecive();
+                                    System.out.println(isp.getServidor(serv).getCx(email).showInbox());
+                                    break;
+                                case 2:
+                                    System.out.println("Outbox");
+                                    System.out.println(isp.getServidor(serv).getCx(email).showOutBox());
+                                    break;
+                                case 3:
+                                    System.out.println("nome@servidor,nome@servidor");
+                                    String[] dest = scan.leString("Digite o nome dos destinatarios:").split(",");
+                                    String assunto = scan.leString("Digite o assunto:");
+                                    String corpo =scan.leString("Digite o corpo:");
+                                    String anexo = scan.leString("Digite o anexo:");
+                                    Email e = null;
+                                    for (int i =0;i<dest.length;i++){
+                                        if(anexo!=""){
+                                            e = new EmailComAnexo(isp.getServidor(serv).getCx(email).nomeDono,
+                                                    dest,assunto,corpo,anexo);
+                                        }else{
+                                            e = new Email(isp.getServidor(serv).getCx(email).nomeDono,
+                                                    dest,assunto,corpo);
+                                        }
                                     }
+                                    isp.getServidor(serv).getCx(email).send(e);
+                                    isp.sendRecive();
+                                    break;
+                                    }
+
                                 }
-                                isp.getServidor(serv).getCx(email).send(e);
-                                break;
-                        }
+                    }else if(isp.getServidor(serv).nomeServidor == "sys"){
+                        System.out.println("Servidor não encontrado!");
+                    }else {
+                        System.out.println("Usuario não encontrado no servidor: "+serv);
                     }
                     break;
                 case 5:
                     String[] e = scan.leString("Dgigite o email!").split("@");
                     isp.getServidor(e[1]).addCpx(new CaixaPostal(e[0],10,10));
                     break;
+
                 case 0:
                     System.out.println("Volte sempre!");
                     break;

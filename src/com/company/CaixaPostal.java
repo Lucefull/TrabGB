@@ -87,7 +87,7 @@ public class CaixaPostal {
                 for (int c =0;c<caixaDeSaida[i].destinatario.length;c++){
                     nom = nom+caixaDeSaida[i].destinatario[c]+",";
                 }
-                saida =saida+ caixaDeSaida[i].destinatario+" | "+
+                saida =saida+ nom+" | "+
                 caixaDeSaida[i].assunto+" | "+
                 caixaDeSaida[i].corpo+" | \n";
             }
